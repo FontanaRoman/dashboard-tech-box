@@ -1,0 +1,345 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 100%;
+  min-height: 100vh;
+  height: max-content;
+  overflow-x: hidden;
+}
+/* ESTILOS HOME */
+/* titulo de home del dashboard */
+.titleBienvenido{
+  font-size: 1rem;
+  color: rgb(77, 240, 77);
+}
+.ContentTitles{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  height: 33vh;
+}
+.contentTitle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  background-color: black;
+}
+.titleHome{
+  font-size: 3rem;
+  position: absolute;
+}
+.borderTitle{
+  color: black;
+  text-shadow: 
+  -1px -1px white,
+  -1px 1px white,
+  1px 1px white,
+  1px -1px white;
+}
+.waveTitle{
+  color: rgb(77, 240, 77);
+  animation : wave 6s ease-in-out infinite
+}
+@keyframes wave {
+  0%, 100% {
+    clip-path: polygon(
+      0% 47%,
+      10% 48%,
+      33% 54%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+      );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+/* olas asnimadas del dashboard*/
+.ContentWaveAnimate{
+height: 50;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.waves{
+  position: relative;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  background: black;
+}
+.waveAnimate{
+  position: absolute;
+  height: 75px;
+  width: 500px;
+  left: -50px;
+  background-color: #fff;
+}
+.waveAnimate .circle{
+  position: relative;
+  float: left;
+  width: 50px;
+  height: 50px;
+  top: -24px;
+  border-radius: 50px;
+}
+.waveAnimate-back{
+  top: 225px;
+  background-color: rgb(39, 102, 39) ;
+  animation: wave-back 4s ease-in-out alternate infinite;
+}
+.waveAnimate-back .circle{
+  background-color:rgb(39, 102, 39);
+}
+.waveAnimate-back .circle:nth-child(2n){
+  background-color: black;
+}
+.waveAnimate-midle{
+  top: 275px;
+  background-color: rgb(71, 182, 71);
+  animation: wave-midle 4s ease-in-out alternate infinite;
+}
+.waveAnimate-midle .circle{
+  background-color: rgb(71, 182, 71);
+}
+.waveAnimate-midle .circle:nth-child(2n){
+  background-color: rgb(39, 102, 39);
+}
+.waveAnimate-front{
+  top: 325px;
+  background-color: rgb(91, 255, 91);
+  animation: wave-front 4s ease-in-out alternate infinite;
+}
+.waveAnimate-front .circle{
+  background-color: rgb(91, 255, 91);
+}
+.waveAnimate-front .circle:nth-child(2n){
+  background-color: rgb(71, 182, 71);
+}
+
+@keyframes wave-back {
+  from{
+    transform: translate3d(-50px, 0, 0);
+  }
+  to{
+    transform: translate3d(20,0,0);
+  }
+}
+
+@keyframes wave-midle {
+  from{
+    transform: translate3d(-20px, 0, 0);
+  }
+  to{
+    transform: translate3d(20,0,0);
+  }
+}
+
+@keyframes wave-front {
+  from{
+    transform: translate3d(-50px, 0, 0);
+  }
+  to{
+    transform: translate3d(20,0,0);
+  }
+}
+/* LINKS DE LA HOME */
+.contentLinksHome{
+  list-style: none;
+  width: 100%;
+  margin-top: 2rem;
+  height: 33vh;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.contentLinksHome li a{
+  font-size: 1.5rem;
+  color: rgb(71, 182, 71);
+  transition: .3s ease-in-out;
+}
+.contentLinksHome li a:hover{
+  font-size: 2rem;
+  color: rgb(95, 230, 95);
+}
+/* FIN ESTILOS HOME */
+
+/* ESTILOS COMPONENTES */
+.contentPage{
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.ButtonProduct{
+  width: 5rem;
+  height: 1rem;
+  font-size: .6rem;
+  background-color: rgb(77, 240, 77);
+  border: 1px solid white;
+  margin-top: 1rem;
+  color: black;
+  text-align: center;
+}
+.Title{
+  font-size: 1.8rem;
+  color: rgb(77, 240, 77);
+  margin: 1rem;
+}
+.ContentNumber{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(77, 240, 77);
+  font-size: 2rem;
+}
+.ContentCard{
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem ;
+  flex-flow: column nowrap;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.Card{
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0px 0px 10px rgba(71, 182, 71,.8);
+  padding: 1rem;
+}
+.CardImage{
+  width: 50%;
+  height: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.CardImage img{
+  width: 100%;
+  height: 100%;
+}
+.CardData{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: column nowrap;
+}
+.CardData p{
+  color: rgb(91, 255, 91);
+  font-size: .6rem;
+}
+.CardData div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+/* Page ProductDetail */
+.detailPage{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.detail{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+.detailImage{
+  width: 100%;
+  height: 40%;
+}
+.detailImage img{
+  width: 100%;
+  height: 100%;
+}
+.contentDataDetail{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: 60%;
+}
+.detailData{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-top: 1rem;
+  padding: 1.5rem;
+}
+.detailData h3{
+  color: rgb(77, 240, 77);
+}
+.detailButton{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem ;
+}
+.linksProduct{
+  width: max-content;
+  padding: .3rem;
+  color: white;
+}
+.linksProduct:hover{
+  color: rgb(71, 182, 71);
+}
+
+
+
+@media screen and (min-width: 970px) {
+  /* Page ProductDetail */
+.detail{
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+.detailImage{
+  width: 100%;
+  height: 60%;
+}
+}
