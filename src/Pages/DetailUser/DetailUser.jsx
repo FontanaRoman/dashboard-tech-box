@@ -11,17 +11,22 @@ function DetailUser() {
             .then(data => setUser(data))
     }, [url])
     const data = user.data;
+
+    if (!data) {
+        return <p>Cargando...</p>; // o cualquier otro indicador de carga
+    }
+
     return (
         <>
             <section className="detailPage">
                 <article className="detail">
                     <div className="detailImage">
-                        <img src="https://unavatar.io/midudev/" alt="" />
+                        <img src={`http://localhost:3000/img/users/${data.image}`} alt="" />
                     </div>
                     <section className="contentDataDetail">
                         <div className="detailData">
-                            <h3>Nombre del usuario</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat architecto quasi vel labore odio cum, possimus eius ut minus iste hic tempora veritatis. Adipisci earum eaque voluptatum dolor, quidem accusamus.</p>
+                            <h3>{data.name}</h3>
+                            <h3>{data.lastname}</h3>
                         </div>
                         <div className="detailButton">
                             
@@ -34,8 +39,3 @@ function DetailUser() {
 }
 
 export default DetailUser;
-
-
-{/* <Link to={`http://localhost:3000/products/${id}/edit`} className="linksProduct">Edit</Link>
-<Link to={`http://localhost:3000/products/${id}/delete`} className="linksProduct">Delete</Link>
-<Link to={`http://localhost:3000/products/detail/${id}`} className="linksProduct">Detail webs</Link> */}

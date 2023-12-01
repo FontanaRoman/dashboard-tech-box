@@ -10,7 +10,7 @@ function  Users() {
         <Title>
           Total de registros
         </Title>
-        <ContentNumber />
+        <ContentNumber ApiUrl={"http://localhost:3000/api/user/totalUser"}/>
         <Title>
           Ultimo registro
         </Title>

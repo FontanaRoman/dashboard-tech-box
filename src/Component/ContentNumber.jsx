@@ -1,10 +1,22 @@
-import React from "react";
-function ContentNumber() {
+import React, { useEffect, useState } from "react";
+function ContentNumber({ApiUrl}) {
+  const [registros, setRegistros] = useState([]);
+  useEffect(()=>{
+    fetch(ApiUrl,{
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then((response) => response.json())
+    .then((data)=>{
+      setRegistros(data.data)
+    })
+  },[ApiUrl])
   return (
     <>
-        <span className="ContentNumber">
-            49
-        </span>
+      {console.log(registros)}
+        <span className="ContentNumber">{registros}</span>
     </>
   );
 }
